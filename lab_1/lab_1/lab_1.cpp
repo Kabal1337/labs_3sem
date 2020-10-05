@@ -62,7 +62,7 @@ int main()
 
         }
     }
-    //cout << find_sum(3245);
+    
     cout << endl << "Original matrix";
     mx.mx_out(n, m);
     Matrix mx1(n);
@@ -72,19 +72,7 @@ int main()
         
             for (int j = 0; j < m; j++)
             {   
-               /*Mat_El* cur_ptr = mx.arr[hash(n, i, j)];
-                if (cur_ptr != NULL) {
-                    while (1) {
-                        if ((cur_ptr->i == i) && (cur_ptr->j) == j) {
-                            mx1.add(cur_ptr->name, i, j);
-                            break;
-                        }
-                        if (cur_ptr->next == NULL) break;
-                        cur_ptr = cur_ptr->next;
-                    }
-                   
-                }*/
-            
+              
             
                 mx1.add(mx.search(i, j), i, j);
             }
@@ -94,25 +82,6 @@ int main()
     mx1.mx_out(n, m);
 
     
-    // int* s_arr = new int[m];
-
-   /* busort(&mx, s_arr, find_max(&mx), m);
-
-    cout << endl << "Modified matrix" << endl;
-    modif_out(&mx, find_max(&mx), s_arr, n, m);
-    */
-
-    //delete[] s_arr;
-
-    /*
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < m; j++)
-        {
-            mx.del(i, j);
-        }
-    }
-    */
     
     for (int i = 0; i < mx.size; i++)
     {
@@ -120,7 +89,7 @@ int main()
     }
     delete[] mx.arr;
 
-   // _CrtDumpMemoryLeaks();
+   
     return 0;
 }
 
@@ -261,7 +230,7 @@ void Matrix::del(int i, int j)
 
     if (cur_ptr == NULL)
     {
-        //cout << "No such element!" << endl;
+       
         return;
     }
 
