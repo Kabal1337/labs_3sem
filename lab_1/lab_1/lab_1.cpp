@@ -116,7 +116,7 @@ int main()
     
     for (int i = 0; i < mx.size; i++)
     {
-        delete[] mx.arr[i];
+        delete mx.arr[i];
     }
     delete[] mx.arr;
 
@@ -254,20 +254,20 @@ void Matrix::mx_new(int m) {
     }
 }
 
-void Matrix::del(int it, int jt)
+void Matrix::del(int i, int j)
 {
-    Mat_El* cur_ptr = arr[hash(size, it, jt)];
+    Mat_El* cur_ptr = arr[hash(size, i, j)];
     Mat_El* prev_ptr = cur_ptr;
 
     if (cur_ptr == NULL)
     {
-        cout << "No such element!" << endl;
+        //cout << "No such element!" << endl;
         return;
     }
 
-    if (cur_ptr->i == it && cur_ptr->j == jt)
+    if (cur_ptr->i == i && cur_ptr->j == j)
     {
-        arr[hash(size, it, jt)] = cur_ptr->next;
+        arr[hash(size, i, j)] = cur_ptr->next;
         delete(cur_ptr);
         return;
     }
@@ -277,15 +277,14 @@ void Matrix::del(int it, int jt)
         prev_ptr = cur_ptr;
         cur_ptr = cur_ptr->next;
 
-        if (cur_ptr->i == it && cur_ptr->j == jt)
+        if (cur_ptr->i == i && cur_ptr->j == j)
         {
             prev_ptr->next = cur_ptr->next;
             delete(cur_ptr);
             return;
         }
     }
-
-    if (cur_ptr->i == it && cur_ptr->j == jt)
+    if (cur_ptr->i == i && cur_ptr->j == j)
     {
         prev_ptr->next = cur_ptr->next;
         delete(cur_ptr);
