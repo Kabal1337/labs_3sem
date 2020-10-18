@@ -29,9 +29,9 @@ public:
 
     
     void add(int name, int i, int j);
-    int search(int i, int j);
+    int search(int i, int j, int n, int m);
     void mx_out(int n, int m);
-    void mx_new(int m);
+    void mx_new(int m, int n);
     void del(int it, int jt);
 };
 
@@ -40,28 +40,51 @@ int read(int* var);
 int find_sum(int a);
 int main()
 {
-    int n, m, temp;
+    int i, j, n, m, temp;
 
     cout << "n: ";
     read(&n);
     cout << endl << "m: ";
     read(&m);
     cout << endl;
-
+   
     Matrix mx(n);
-
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < m; j++)
+    while (1) {
+        cout << "i: ";
+        read(&i);
+        cout << endl;
+       
+        while (!cin.good() || i > n-1)
         {
-            cin >> temp;
-            if (temp != 0)
-            {
-                mx.add(temp, i, j);
-            }
-
+            cout << endl << "Invalid input, try again" << endl;
+            cin.clear();
+            cin.ignore(cin.rdbuf()->in_avail());
+            cin >> i;
         }
+        if (i == -1) break;
+        cout << "j: ";
+        read(&j);
+        cout << endl;
+       
+        while (!cin.good() || j > m-1)
+        {
+            cout << endl << "Invalid input, try again" << endl;
+            cin.clear();
+            cin.ignore(cin.rdbuf()->in_avail());
+            cin >> j;
+        }
+        if (j == -1) break;
+        cout << "name: ";
+        cin >> temp;
+        cout << endl;
+        if (temp != 0)
+        {
+            mx.add(temp, i, j);
+        }
+        
     }
+        
+    
     
     cout << endl << "Original matrix";
     mx.mx_out(n, m);
@@ -74,11 +97,11 @@ int main()
             {   
               
             
-                mx1.add(mx.search(i, j), i, j);
+                mx1.add(mx.search(i, j, n, m), i, j);
             }
 
     }
-    mx1.mx_new(m);
+    mx1.mx_new(m, n);
     mx1.mx_out(n, m);
 
     
@@ -134,8 +157,13 @@ void Matrix::add(int name, int i, int j)
     cur_ptr->name = name;
     cur_ptr->next = NULL;
 }
-int Matrix::search(int i, int j)
+int Matrix::search(int i, int j, int n, int m)
 {
+    if ((i > n - 1) || (j > m -1)) {
+        cout << "invalid i or j";
+        return 0;
+    }
+
     Mat_El* cur_ptr = arr[hash(size, i, j)];
 
     if (cur_ptr == NULL) return 0;
@@ -161,7 +189,7 @@ int read(int* var)
     int temp;
     cin >> temp;
 
-    while (!cin.good() || temp < 0)
+    while (!cin.good() || temp < -1)
     {
         cout << endl << "Invalid input, try again" << endl;
         cin.clear();
@@ -182,7 +210,7 @@ void Matrix::mx_out(int n, int m)
     {
         for (int j = 0; j < m; j++)
         {
-            temp = search(i, j);
+            temp = search(i, j, n, m);
             if (temp != 0)
             {
                 cout << temp << " ";
@@ -195,11 +223,11 @@ void Matrix::mx_out(int n, int m)
         cout << endl;
     }
 }
-void Matrix::mx_new(int m) {
+void Matrix::mx_new(int m, int n) {
     for (int i = 0; i < size; i++)
     {
         
-        int k = search(i, m-1);
+        int k = search(i, m-1, n, m);
         int p = find_sum(k);
         for (int j = 0; j < m; j++)
         {   
