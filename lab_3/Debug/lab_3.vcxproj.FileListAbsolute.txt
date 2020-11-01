@@ -1,0 +1,4 @@
+C:\Users\34110\source\repos\lab_3\Debug\lab_3.exe
+C:\Users\34110\source\repos\lab_3\Debug\lab_3.pdb
+D:\Лабы 3 сем\labs_3sem\lab_3\Debug\lab_3.exe
+D:\Лабы 3 сем\labs_3sem\lab_3\Debug\lab_3.pdb
