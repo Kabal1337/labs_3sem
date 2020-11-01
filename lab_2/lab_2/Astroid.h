@@ -13,8 +13,8 @@ public:
 	float get_s();
 	const float get_x_from_t(float t);
 	const float get_y_from_t(float t);
-	const float get_y_from_x();
-
+	const float get_y_from_x(float x);
+	const float get_x0();
 private:
 	float r; // r - радиус 
 	float x0;

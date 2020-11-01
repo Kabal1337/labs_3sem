@@ -10,7 +10,9 @@ Astroid::Astroid() {
 	this->x0 = (pow(r, 0.67));
 
 }
-
+const float Astroid::get_x0() {
+	return(this->x0);
+}
 Astroid::Astroid(float r) {
 
 	this->r = r;
@@ -55,22 +57,13 @@ const float Astroid::get_y_from_t(float t) {
 	float y = r * pow(sin(t), 3);
 	return y;
 } 
-const float  Astroid::get_y_from_x(){
-
-	float x;
-	std::cin >> x;
-
-	while (!std::cin.good() || x>x0 || x<-x0)
-	{
-		std::cout << std::endl << "Invalid input, try again" << std::endl;
-		std::cin.clear();
-		std::cin.ignore(std::cin.rdbuf()->in_avail());
-		std::cin >> x;
-	}
+const float  Astroid::get_y_from_x(float x){
 
 	
 
-	float temp = pow(r, 0.67) - pow(x, 0.67);
+	
+
+	float temp = pow(r, 0.67) - pow(abs(x), 0.67);
 	float y = pow(abs(temp), 1.5);
 	return(y);
 }

@@ -1,11 +1,11 @@
 ﻿  Astroid.cpp
 D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\Astroid.cpp(10,17): warning C4244: =: преобразование "double" в "float", возможна потеря данных
-D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\Astroid.cpp(17,17): warning C4244: =: преобразование "double" в "float", возможна потеря данных
-D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\Astroid.cpp(33,15): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
-D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\Astroid.cpp(39,17): warning C4244: return: преобразование "double" в "const float", возможна потеря данных
-D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\Astroid.cpp(45,10): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
-D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\Astroid.cpp(73,13): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
-D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\Astroid.cpp(74,10): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\Astroid.cpp(19,17): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\Astroid.cpp(35,15): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\Astroid.cpp(41,17): warning C4244: return: преобразование "double" в "const float", возможна потеря данных
+D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\Astroid.cpp(47,10): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\Astroid.cpp(66,13): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\Astroid.cpp(67,10): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
   Reads.cpp
   lab_2.cpp
 D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\lab_2.cpp(31,19): warning C4244: =: преобразование "float" в "int", возможна потеря данных

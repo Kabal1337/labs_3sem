@@ -33,7 +33,7 @@ int main()
 		switch (com_num)
 		{
 		case 1:
-			 
+			
 			length = astroid.get_length_0_t(read_angle());
 			
 			cout << length<<endl;
@@ -57,8 +57,17 @@ int main()
 			break;
 
 		case 6:
-			
-			cout << "y=+-" << abs(astroid.get_y_from_x());
+			float x;
+			std::cin >> x;
+
+			while (!std::cin.good() || x > astroid.get_x0() || x < -astroid.get_x0())
+			{
+				std::cout << std::endl << "Invalid input, try again" << std::endl;
+				std::cin.clear();
+				std::cin.ignore(std::cin.rdbuf()->in_avail());
+				std::cin >> x;
+			}
+			cout << "y=+-" << abs(astroid.get_y_from_x(x));
 			break;
 		
 		case 7:

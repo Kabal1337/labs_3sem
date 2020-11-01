@@ -1,0 +1,13 @@
+﻿  TestLab2.cpp
+D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\Astroid.cpp(10,17): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\Astroid.cpp(19,17): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\Astroid.cpp(35,15): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\Astroid.cpp(41,17): warning C4244: return: преобразование "double" в "const float", возможна потеря данных
+D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\Astroid.cpp(47,10): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\Astroid.cpp(66,13): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\Astroid.cpp(67,10): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\TestLab22\TestLab2.cpp(102,14): warning C4244: инициализация: преобразование "float" в "int", возможна потеря данных
+D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\TestLab22\TestLab2.cpp(103,15): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\TestLab22\TestLab2.cpp(104,12): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\TestLab22\TestLab2.cpp(105,25): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+  TestLab2.vcxproj -> D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\TestLab22\Debug\TestLab2.exe

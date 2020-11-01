@@ -1,0 +1,2 @@
+D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\TestLab22\Debug\TestLab2.exe
+D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\TestLab22\Debug\TestLab2.pdb
