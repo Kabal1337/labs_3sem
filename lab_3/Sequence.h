@@ -3,20 +3,21 @@
 #define SIZE 100
 class Sequence {
 public:
-	Sequence();
-	Sequence(int length, int* arr);
+	Sequence(); //пустой конструктор дл€ инициализации экземпл€ров и массивов экземпл€ров класса по умолчанию (делает длину = 0)
+	Sequence(int length, const int* arr); //создание экземпл€ров класса с инициализацией размером и значени€ми элементов после-довательности;
+	Sequence(int el); //cоздание экземпл€ров класса с инициализацией единственным элементом последователь-ности;
 	
-	//Sequence(int length);
-	int find_el(int num);
-	int uniq();
-	void set_arr(int index, int num);
-	void see_seq();
-	Sequence unite(Sequence seq);
-	int get_seq(int index);
-	int get_length();
-	void add_el(int num);
-	void see_seq_up();
-	void see_seq_down();
+	int find_el_count(int num); //определение частоты по€влени€ некоторого элемента в последовательности
+	int uniq(); //
+	void set_arr(int index, int num);  //добавить одлин элемент по индексу
+	void see_seq(); //увидеть последовательность
+	Sequence unite(Sequence seq); //объединение двух последовательностей в одну(с помощью перегруженного оператора сложени€ + ) в результате формируетс€ новый вектор с сохранением исходных
+	int get_el(int index);//получить элемент последовательности по его индексу
+	int get_length();//получить длину массива класса
+	void add_el(int num); //добавить один элемент в последовательность
+	void see_seq_up(int* array); //выделение первой упор€доченной по возрастанию последовательности длиной не менее трЄх элементов;
+	void see_seq_down(int* array);//выделение первой упор€доченной по убыванию последовательности длиной не менее трЄх элементов
+	int* get_seq(); //передает массив класса
 private:
 	int length;
 	int arr[SIZE];

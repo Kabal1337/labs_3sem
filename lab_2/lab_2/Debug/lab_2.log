@@ -1,14 +1,13 @@
 ﻿  Astroid.cpp
 D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\Astroid.cpp(10,17): warning C4244: =: преобразование "double" в "float", возможна потеря данных
-D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\Astroid.cpp(19,17): warning C4244: =: преобразование "double" в "float", возможна потеря данных
-D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\Astroid.cpp(35,15): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
-D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\Astroid.cpp(41,17): warning C4244: return: преобразование "double" в "const float", возможна потеря данных
-D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\Astroid.cpp(47,10): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
-D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\Astroid.cpp(66,13): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
-D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\Astroid.cpp(67,10): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\Astroid.cpp(25,17): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\Astroid.cpp(45,15): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\Astroid.cpp(56,17): warning C4244: return: преобразование "double" в "float", возможна потеря данных
+D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\Astroid.cpp(62,10): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\Astroid.cpp(96,13): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\Astroid.cpp(97,10): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
   Reads.cpp
   lab_2.cpp
-D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\lab_2.cpp(31,19): warning C4244: =: преобразование "float" в "int", возможна потеря данных
-D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\lab_2.cpp(15,19): warning C4101: x: неиспользованная локальная переменная
+D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\lab_2.cpp(33,19): warning C4244: =: преобразование "float" в "int", возможна потеря данных
   Создание кода...
   lab_2.vcxproj -> D:\Лабы 3 сем\labs_3sem\lab_2\Debug\lab_2.exe

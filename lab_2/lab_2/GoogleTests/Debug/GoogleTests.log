@@ -1,0 +1,26 @@
+﻿  test.cpp
+D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\GoogleTests\test.cpp(31,21): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\GoogleTests\test.cpp(34,19): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\GoogleTests\test.cpp(35,18): warning C4244: инициализация: преобразование "float" в "int", возможна потеря данных
+D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\GoogleTests\test.cpp(42,21): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\GoogleTests\test.cpp(43,49): warning C4305: +=: усечение из "double" в "float"
+D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\GoogleTests\test.cpp(45,24): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\GoogleTests\test.cpp(52,21): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\GoogleTests\test.cpp(53,49): warning C4305: +=: усечение из "double" в "float"
+D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\GoogleTests\test.cpp(55,24): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\GoogleTests\test.cpp(63,21): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\GoogleTests\test.cpp(64,49): warning C4305: +=: усечение из "double" в "float"
+D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\GoogleTests\test.cpp(74,21): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\GoogleTests\test.cpp(75,49): warning C4305: +=: усечение из "double" в "float"
+D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\GoogleTests\test.cpp(84,21): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\GoogleTests\test.cpp(85,17): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\GoogleTests\test.cpp(86,17): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\GoogleTests\test.cpp(92,21): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\GoogleTests\test.cpp(94,20): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\GoogleTests\test.cpp(101,21): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\GoogleTests\test.cpp(103,20): warning C4244: инициализация: преобразование "float" в "int", возможна потеря данных
+D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\GoogleTests\test.cpp(104,24): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\GoogleTests\test.cpp(105,21): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\GoogleTests\test.cpp(106,13): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\GoogleTests\test.cpp(113,20): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+  GoogleTests.vcxproj -> D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\GoogleTests\Debug\GoogleTests.exe

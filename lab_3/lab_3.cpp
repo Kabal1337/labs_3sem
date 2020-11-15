@@ -13,7 +13,7 @@ int main()
 {
 	//float  r;
 	int com_num = 0;
-	int num;
+	int num, index;
 	cout << "Length1: ";
 	int length = read_length();
 	int arr[SIZE];
@@ -61,16 +61,27 @@ int main()
 		case 4:
 			
 			num = read_r();
-			cout << seq3.find_el(num) << endl;
+			cout << seq3.find_el_count(num) << endl;
 			break;
 		case 5:
 			num = read_r();
 			seq3.add_el(num);
 			break;
 		case 6:
-			seq3.see_seq_down();
+			
+			int arr[SIZE];
+			seq1.see_seq_down(arr);
+			for (int i = 0; i < 3; i++)
+			{
+				cout << arr[i] << ' ';
+			}
+			cout << endl;
 			break;
 		case 7:
+			index = read_r();
+			cout<<seq1.get_el(index);
+			break;
+		case 8:
 			_CrtDumpMemoryLeaks();
 			return 0;
 			break;

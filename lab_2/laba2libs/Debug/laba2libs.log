@@ -1,0 +1,9 @@
+﻿  Astroid.cpp
+D:\Лабы 3 сем\labs_3sem\lab_2\laba2libs\Astroid.cpp(13,17): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+D:\Лабы 3 сем\labs_3sem\lab_2\laba2libs\Astroid.cpp(24,17): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+D:\Лабы 3 сем\labs_3sem\lab_2\laba2libs\Astroid.cpp(44,15): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+D:\Лабы 3 сем\labs_3sem\lab_2\laba2libs\Astroid.cpp(55,17): warning C4244: return: преобразование "double" в "float", возможна потеря данных
+D:\Лабы 3 сем\labs_3sem\lab_2\laba2libs\Astroid.cpp(61,10): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+D:\Лабы 3 сем\labs_3sem\lab_2\laba2libs\Astroid.cpp(95,13): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+D:\Лабы 3 сем\labs_3sem\lab_2\laba2libs\Astroid.cpp(96,10): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+  laba2libs.vcxproj -> D:\Лабы 3 сем\labs_3sem\lab_2\laba2libs\Debug\laba2libs.dll

@@ -15,6 +15,7 @@ int main()
 	float length, r, x;
 	int com_num=0;
 	r = read_r();
+	
 	Astroid astroid(r);
 	float t;
 	while (com_num != 8)
@@ -25,7 +26,8 @@ int main()
 		cout << "4. Find area" << endl;
 		cout << "5. Find x(t) and y(t)" << endl;
 		cout << "6. Find y(x)" << endl;
-		cout << "7. Exit" << endl;
+		cout << "7.Set r";
+		cout << "8. Exit" << endl;
 		cout << "Command number: ";
 
 		com_num = read_r();
@@ -33,45 +35,71 @@ int main()
 		switch (com_num)
 		{
 		case 1:
-			
-			length = astroid.get_length_0_t(read_angle());
-			
-			cout << length<<endl;
-			
+			t = read_r();
+			try {
+				length = astroid.get_length_0_t(t);
+
+				cout << length << endl;
+			}
+			catch (const char* str) {
+				std::cerr << str << endl;
+
+			}
 			 break;
 		case 2:
 			
 			cout << 6*r << endl;
 			break;
 		case 3:
-			cout << astroid.get_radius(read_angle())<<endl;
+			t = read_r();
+			try {
+				cout << astroid.get_radius(t) << endl;
+			}
+			catch (const char* str) {
+				std::cerr << str << endl;
+
+			}
 			break;
 		case 4:
 			cout << astroid.get_s() << endl;
 			break;
 		case 5:
-			t = read_angle();
-			cout << "x: " << astroid.get_x_from_t(t) << endl;
-			cout << "y: " << astroid.get_y_from_t(t) << endl;
 			
+			t=read_r();
+			try {
+				cout << "x: " << astroid.get_x_from_t(t) << endl;
+				cout << "y: " << astroid.get_y_from_t(t) << endl;
+			}
+			catch (const char* str) {
+				std::cerr << str << endl;
+				
+			}
 			break;
 
 		case 6:
-			float x;
-			std::cin >> x;
+			x = read_r();
+			
 
-			while (!std::cin.good() || x > astroid.get_x0() || x < -astroid.get_x0())
+			
+
+			try
 			{
-				std::cout << std::endl << "Invalid input, try again" << std::endl;
-				std::cin.clear();
-				std::cin.ignore(std::cin.rdbuf()->in_avail());
-				std::cin >> x;
+				cout << "y=+-" << abs(astroid.get_y_from_x(x));
 			}
-			cout << "y=+-" << abs(astroid.get_y_from_x(x));
+			catch (const char* str)
+			{
+				std::cerr << str << endl;;
+			}
+
+
 			break;
 		
 		case 7:
-			_CrtDumpMemoryLeaks();
+			t = read_r();
+			astroid.set_r(t);
+			break;
+		case 8:
+
 			return 0;
 			break;
 		default:

@@ -10,23 +10,33 @@ Astroid::Astroid() {
 	this->x0 = (pow(r, 0.67));
 
 }
-const float Astroid::get_x0() {
+ float Astroid::get_x0() const {
 	return(this->x0);
 }
+ void Astroid::set_r(float r)
+ {
+	 this->r = r;
+ }
 Astroid::Astroid(float r) {
-
+	if (r < 0) {
+		throw "invalid rad";
+	}
 	this->r = r;
 	this->x0 = (pow(r, 0.67));
-
+	
 }
 
-const float Astroid::get_r()
+float Astroid::get_r() const
 {
 	return this->r;
 }
 
-const float Astroid::get_length_0_t(float t) {
-
+float Astroid::get_length_0_t(float t) const {
+	if (t<0 || t > M_PI / 2)
+	{
+		throw "invalid angle";
+		std::cout << std::endl;
+	}
 	//float a = r * sqrt(pow(cos(t), 6) + pow(sin(t), 6)); // a-радиус вектор в пол€рных координатах;
 	//float x0 = this->x0;
 	//float x = sin(t) * a;
@@ -37,29 +47,49 @@ const float Astroid::get_length_0_t(float t) {
 
 }
 
-const float Astroid::get_radius(float t) {
+float Astroid::get_radius(float t) const{
+	if (t<0 || t > M_PI / 2)
+	{
+		throw "invalid angle";
+		std::cout << std::endl;
+	}
 	return(1.5 * r * sin(2*t));
 
 }
 
-float Astroid::get_s() {
+float Astroid::get_s() const {
 	float m= pow(r, 2);
 	float s = 0.375 * M_PI *m;
 	return(s);
 }
 
-const float Astroid::get_x_from_t(float t){
+ float Astroid::get_x_from_t(float t) const {
+	if (t<0 || t > M_PI / 2)
+	{
+		throw "invalid x";
+		std::cout << std::endl;
+	}
 	float x = r * pow(cos(t), 3);
 	return x;
 }
 
-const float Astroid::get_y_from_t(float t) {
+ float Astroid::get_y_from_t(float t) const {
+
+	if (t<0 || t > M_PI / 2)
+	{
+		throw "invalid t";
+		std::cout << std::endl;
+	}
 	float y = r * pow(sin(t), 3);
 	return y;
 } 
-const float  Astroid::get_y_from_x(float x){
+ float  Astroid::get_y_from_x(float x) const {
 
-	
+	if (x > x0 || x < -x0)
+	{
+		throw "Invalid x";
+		
+	}
 
 	
 
@@ -67,4 +97,6 @@ const float  Astroid::get_y_from_x(float x){
 	float y = pow(abs(temp), 1.5);
 	return(y);
 }
-
+ float Astroid::get_all_length() const {
+	return(6 * r);
+}

@@ -1,0 +1,2 @@
+D:\Лабы 3 сем\labs_3sem\lab_2\laba2libs\Debug\laba2libs.dll
+D:\Лабы 3 сем\labs_3sem\lab_2\laba2libs\Debug\laba2libs.pdb

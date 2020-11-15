@@ -16,7 +16,7 @@ int main()
 	{	
 		cout << "r: " <<  i<< endl;
 		Astroid ast(i);
-		/*
+		
 		cout << "Testing get_r()" << endl;
 		if (ast.get_r() == i) {
 			cout << "Success" << endl;
@@ -97,9 +97,10 @@ int main()
 		else {
 			cout << "error" << endl;
 		}
-		*/cout << "Testing :get_y_from_x()" << endl;
+		cout << "Testing :get_y_from_x()" << endl;
 		cout << "r: " << i << endl;
 		for (int x = -ast.get_x0(); x < ast.get_x0(); x += 1) {
+			cout << "x: " << x << endl;
 			float temp = pow(i, 0.67) - pow(abs(x), 0.67);
 			float y = pow(abs(temp), 1.5);
 			if (ast.get_y_from_x(x)==y) {

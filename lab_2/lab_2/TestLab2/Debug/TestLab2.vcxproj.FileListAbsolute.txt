@@ -1,5 +1,0 @@
-D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\TestLab2\Debug\TestLab2.vcxproj.CopyComplete
-D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\TestLab2\Debug\TestLab2.exe
-D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\TestLab2\Debug\TestLab2.pdb
-D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\TestLab2\Debug\gtest.pdb
-D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\TestLab2\Debug\gtest_main.pdb

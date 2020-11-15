@@ -1,0 +1,2 @@
+﻿#define LABA2LIBS_API __declspec(dllexport)
+#define LABA2LIBS_API __declspec(dllimport)

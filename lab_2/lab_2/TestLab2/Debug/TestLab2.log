@@ -1,4 +1,0 @@
-﻿  test.cpp
-pch.obj : error LNK2005: "public: __thiscall Astroid::Astroid(void)" (??0Astroid@@QAE@XZ) уже определен в test.obj
-pch.obj : error LNK2005: "public: float const __thiscall Astroid::get_r(void)" (?get_r@Astroid@@QAE?BMXZ) уже определен в test.obj
-D:\Лабы 3 сем\labs_3sem\lab_2\lab_2\TestLab2\Debug\TestLab2.exe : fatal error LNK1169: обнаружен многократно определенный символ - один или более
