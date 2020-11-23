@@ -14,25 +14,11 @@ int main()
 	//float  r;
 	int com_num = 0;
 	int num, index;
-	cout << "Length1: ";
-	int length = read_length();
-	int arr[SIZE];
-	for (int i = 0; i < length; i++) {
-		arr[i] = read_r();
-	}
-	Sequence seq1(length, arr);
-	
-	cout << endl;
-	
-	cout << "Length2: ";
-	length = read_length();
-	for (int i = 0; i < length; i++) {
-		arr[i] = read_r();
-	}
-	Sequence seq2(length, arr);
-	cout << endl;
-	//float t;
+	Sequence seq1;
+	Sequence seq2;
 	Sequence seq3;
+	seq1.input();
+	seq2.input();
 	while (com_num != 8)
 	{
 		
@@ -53,7 +39,7 @@ int main()
 			seq3 = seq1.unite(seq2);
 			break;
 		case 2:
-			seq3.see_seq();
+			seq3.see_seq(cout);
 			break;
 		case 3:
 			cout << seq3.uniq() << endl;

@@ -27,15 +27,15 @@ void Sequence::set_arr(int index, int num) {
 	
 }
 
-void Sequence::see_seq()
-{	
+void Sequence::see_seq(std::ostream& out) const
+{
 
 	for (int i = 0; i < length; i++)
 	{
-		cout << arr[i] << ' ';
+		out << this->arr[i] << ' ';
 
 	}
-	cout << endl;
+	out << endl;
 }
 Sequence Sequence::unite(Sequence seq) {
 	
@@ -52,7 +52,7 @@ Sequence Sequence::unite(Sequence seq) {
 	return seq_temp;
 	
 }
-int Sequence::get_el(int index) {
+int Sequence::get_el(int index) const {
 	
 	return(arr[index]);
 }
@@ -60,7 +60,7 @@ int* Sequence::get_seq() {
 
 	return(this->arr);
 }
-int Sequence::get_length()
+int Sequence::get_length() const
 {
 	return length;
 }
@@ -71,7 +71,7 @@ void Sequence::add_el(int num)
 	arr[length - 1] = num;
 }
 
-void Sequence::see_seq_up(int* array)
+void Sequence::see_seq_up(int* array) const
 {
 	int arr_temp[SIZE];
 	int temp = 0;
@@ -100,7 +100,7 @@ void Sequence::see_seq_up(int* array)
 		}
 	}
 }
-void Sequence::see_seq_down(int* array)
+void Sequence::see_seq_down(int* array) const
 {
 	int arr_temp[SIZE];
 	int temp=0;
@@ -129,7 +129,7 @@ void Sequence::see_seq_down(int* array)
 		}
 	}
 }
-int Sequence::uniq() {
+int Sequence::uniq() const {
 
 	std::set <int> st;
 	for (int i = 0; i < length; i++)
@@ -140,7 +140,7 @@ int Sequence::uniq() {
 	return(st.size());
 
 }
-int Sequence::find_el_count(int num){
+int Sequence::find_el_count(int num) const {
 	int temp = 1;
 	for (int i = 0; i < length; i++)
 	{
@@ -157,4 +157,31 @@ int Sequence::find_el_count(int num){
 	}
 	//cout << "Invalid input";
 	return(0);
+}
+void Sequence::input() {
+	cout << "Length1: ";
+
+
+	std::cin >> length;
+	cout << endl;
+	while (!std::cin.good() || length > SIZE)
+	{
+		std::cout << std::endl << "Invalid input, try again" << std::endl;
+		std::cin.clear();
+		std::cin.ignore(std::cin.rdbuf()->in_avail());
+		std::cin >> length;
+	}
+
+	for (int i = 0; i < length; i++) {
+		std::cin >> this->arr[i];
+		while (!std::cin.good())
+		{
+			std::cout << std::endl << "Invalid input, try again" << std::endl;
+			std::cin.clear();
+			std::cin.ignore(std::cin.rdbuf()->in_avail());
+			std::cin >> this->arr[i];
+		}
+
+	}
+
 }
