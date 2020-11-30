@@ -26,7 +26,7 @@ TEST_F(AstroidTest, default_constr) {
 }
 TEST_F(AstroidTest, custom_constr)
 {
-    for (int i = 1; i < NUM_OF_TESTS; i++)
+    for (int i = -NUM_OF_TESTS; i < NUM_OF_TESTS; i++)
     {
         Astroid ast(i);
 
