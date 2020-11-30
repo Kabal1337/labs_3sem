@@ -1,0 +1,5 @@
+D:\Лабы 3 сем\labs_3sem\lab3v3\GoogleTestsV3\Debug\GoogleTestsV3.vcxproj.CopyComplete
+D:\Лабы 3 сем\labs_3sem\lab3v3\GoogleTestsV3\Debug\GoogleTestsV3.exe
+D:\Лабы 3 сем\labs_3sem\lab3v3\GoogleTestsV3\Debug\GoogleTestsV3.pdb
+D:\Лабы 3 сем\labs_3sem\lab3v3\GoogleTestsV3\Debug\gtest.pdb
+D:\Лабы 3 сем\labs_3sem\lab3v3\GoogleTestsV3\Debug\gtest_main.pdb
