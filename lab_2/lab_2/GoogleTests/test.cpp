@@ -26,7 +26,7 @@ TEST_F(AstroidTest, default_constr) {
 }
 TEST_F(AstroidTest, custom_constr)
 {
-    for (int i = -NUM_OF_TESTS; i < NUM_OF_TESTS; i++)
+    for (int i = 0; i < NUM_OF_TESTS; i++)
     {
         Astroid ast(i);
 
@@ -36,14 +36,39 @@ TEST_F(AstroidTest, custom_constr)
         EXPECT_DOUBLE_EQ(temp1, temp2);
     }
 }
+TEST_F(AstroidTest, set_r_throw)
+{
+    for (int i = -NUM_OF_TESTS; i < 0; i++)
+    {
+        
+        EXPECT_THROW(ast->set_r(i), char*);
+       
+    }
+}
 TEST_F(AstroidTest, get_length_0_t)
 {
-    for (int i = 1; i < NUM_OF_TESTS; i++) {
+    for (int i = 0; i < NUM_OF_TESTS; i++) {
         Astroid ast(i);
         for (float j = 0; j < M_PI / 2; j += 0.1)
         {
             float temp = 1.5 * i * pow(sin(j), 2);
             EXPECT_DOUBLE_EQ(temp, ast.get_length_0_t(j));
+        }
+    }
+}
+TEST_F(AstroidTest, get_length_0_t_throw)
+{
+    for (int i = 0; i < NUM_OF_TESTS; i++) {
+        Astroid ast(i);
+        for (float j = -NUM_OF_TESTS/2; j < 0; j += 0.1)
+        {
+            
+            EXPECT_THROW(ast.get_length_0_t(j), char*);
+        }
+        for (float j = M_PI/2; j < NUM_OF_TESTS/2; j += 0.1)
+        {
+
+            EXPECT_THROW(ast.get_length_0_t(j), char*);
         }
     }
 }
@@ -57,14 +82,45 @@ TEST_F(AstroidTest, get_radius) {
         }
     }
 }
+TEST_F(AstroidTest, get_radius_throw) {
+    for (int i = 1; i < NUM_OF_TESTS; i++) {
+        Astroid ast(i);
+        for (float j = -NUM_OF_TESTS / 2; j < 0; j += 0.1)
+        {
+
+            EXPECT_THROW(ast.get_radius(j), char*);
+        }
+        for (float j = M_PI / 2; j < NUM_OF_TESTS / 2; j += 0.1)
+        {
+
+            EXPECT_THROW(ast.get_radius(j), char*);
+        }
+    }
+}
 TEST_F(AstroidTest, get_x_from_t) {
     
-    for (int i = 1; i < NUM_OF_TESTS; i++) {
+    for (int i = 0; i < NUM_OF_TESTS; i++) {
         Astroid ast(i);
         for (float j = 0; j < M_PI / 2; j += 0.1)
         {
             float temp = i * pow(cos(j), 3);
             EXPECT_DOUBLE_EQ(temp, ast.get_x_from_t(j));
+        }
+    }
+}
+TEST_F(AstroidTest, get_x_from_t_throw) {
+
+    for (int i = 0; i < NUM_OF_TESTS; i++) {
+        Astroid ast(i);
+        for (float j = -NUM_OF_TESTS / 2; j < 0; j += 0.1)
+        {
+
+            EXPECT_THROW(ast.get_x_from_t(j), char*);
+        }
+        for (float j = M_PI / 2; j < NUM_OF_TESTS / 2; j += 0.1)
+        {
+
+            EXPECT_THROW(ast.get_x_from_t(j), char*);
         }
     }
 }
@@ -76,6 +132,22 @@ TEST_F(AstroidTest, get_y_from_t) {
         {
             float temp = i * pow(sin(j), 3);
             EXPECT_DOUBLE_EQ(temp, ast.get_y_from_t(j));
+        }
+    }
+}
+TEST_F(AstroidTest, get_y_from_t_throw) {
+
+    for (int i = 1; i < NUM_OF_TESTS; i++) {
+        Astroid ast(i);
+        for (float j = -NUM_OF_TESTS / 2; j < 0; j += 0.1)
+        {
+
+            EXPECT_THROW(ast.get_y_from_t(j), char*);
+        }
+        for (float j = M_PI / 2; j < NUM_OF_TESTS / 2; j += 0.1)
+        {
+
+            EXPECT_THROW(ast.get_y_from_t(j), char*);
         }
     }
 }
@@ -104,6 +176,23 @@ TEST_F(AstroidTest, get_y_from_x) {
             float temp = pow(i, 0.67) - pow(abs(x), 0.67);
             float y = pow(abs(temp), 1.5);
             EXPECT_DOUBLE_EQ(y, ast.get_y_from_x(x));
+        }
+    }
+}
+TEST_F(AstroidTest, get_y_from_x_throw) {
+    for (int i = 1; i < NUM_OF_TESTS; i++) {
+        Astroid ast(i);
+
+        
+        for (int x = -NUM_OF_TESTS / 2; x< -ast.get_x0()-1; x += 1)
+        {
+
+            EXPECT_THROW(ast.get_y_from_x(x), char*);
+        }
+        for (int x = ast.get_x0()+1; x < NUM_OF_TESTS/2; x += 1)
+        {
+
+            EXPECT_THROW(ast.get_y_from_x(x), char*);
         }
     }
 }

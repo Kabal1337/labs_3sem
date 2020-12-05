@@ -14,16 +14,17 @@ Astroid::Astroid() {
 	return(this->x0);
 }
  void Astroid::set_r(float r)
- {
-	 this->r = r;
+ {	
+	 if (r < 0) {
+		 throw "invalid rad";
+	 } 
+	 else {
+		 this->r = r;
+		 this->x0 = (pow(r, 0.67));
+	 }
  }
 Astroid::Astroid(float r) {
-	if (r < 0) {
-		throw "invalid rad";
-	}
-	this->r = r;
-	this->x0 = (pow(r, 0.67));
-	
+	set_r(r);
 }
 
 float Astroid::get_r() const
@@ -37,14 +38,15 @@ float Astroid::get_length_0_t(float t) const {
 		throw "invalid angle";
 		std::cout << std::endl;
 	}
-	//float a = r * sqrt(pow(cos(t), 6) + pow(sin(t), 6)); // a-радиус вектор в пол€рных координатах;
-	//float x0 = this->x0;
-	//float x = sin(t) * a;
-	//int y = cos(t) * a;
-	//1+pow((sqrt(pow(r, 2/3)-pow(x0, 2/3)))/pow(x, 1/3), 2)
-	float length = 1.5 * r * pow(sin(t), 2);
-	return(length);
-
+	else {
+		//float a = r * sqrt(pow(cos(t), 6) + pow(sin(t), 6)); // a-радиус вектор в пол€рных координатах;
+		//float x0 = this->x0;
+		//float x = sin(t) * a;
+		//int y = cos(t) * a;
+		//1+pow((sqrt(pow(r, 2/3)-pow(x0, 2/3)))/pow(x, 1/3), 2)
+		float length = 1.5 * r * pow(sin(t), 2);
+		return(length);
+	}
 }
 
 float Astroid::get_radius(float t) const{
