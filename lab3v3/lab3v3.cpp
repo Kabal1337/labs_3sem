@@ -14,12 +14,13 @@ int main()
 	int num, index, temp;
 	Sequence seq1;
 	Sequence seq2;
-	Sequence* seq3 = nullptr;
+	Sequence seq3;
 	Sequence seq_one(3);
 	cin >> seq1;
 	cin >> seq2;
 	cout << seq_one.get_el(0);
 	//seq3.input();
+	int* arr;
 	while (com_num != 8)
 	{
 
@@ -37,14 +38,14 @@ int main()
 		switch (com_num)
 		{
 		case 1:
-			seq3 = seq1 + seq2;
+			seq3 = seq1.unite(&seq2);
 			break;
 		case 2:
-			cout << *seq3;
+			cout << seq3;
 			break;
 		case 3:
-			if(seq3!=nullptr)
-			cout << seq3->uniq() << endl;
+			
+			cout << seq3.uniq() << endl;
 			break;
 		case 4:
 
@@ -54,17 +55,23 @@ int main()
 			break;
 		case 5:
 			num = read_r();
-			*seq3+=num;
+			seq3+=num;
 			break;
 		case 6:
 
-			int arr[SIZE];
-			seq1.see_seq_down(arr);
+			arr = new int[10];
+			try {
+				seq1.see_seq_up_or_down(arr, 10, 1);
+			}
+			catch (const char* a) {
+				cout << a;
+			}
 			for (int i = 0; i < 3; i++)
 			{
 				cout << arr[i] << ' ';
 			}
 			cout << endl;
+			delete[] arr;
 			break;
 		case 7:
 			index = read_r();

@@ -20,19 +20,4 @@ int read_r()
 	return temp;
 }
 
-int read_length()
-{
-	int temp;
-	std::cin >> temp;
 
-	while (!std::cin.good() || temp>SIZE)
-	{
-		std::cout << std::endl << "Invalid input, try again" << std::endl;
-		std::cin.clear();
-		std::cin.ignore(std::cin.rdbuf()->in_avail());
-		std::cin >> temp;
-	}
-
-	return temp;
-	
-}

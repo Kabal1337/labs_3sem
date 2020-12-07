@@ -1,2 +1,12 @@
-﻿  Sequence.cpp
-  lab3v3.vcxproj -> D:\Лабы 3 сем\labs_3sem\lab3v3\Debug\lab3v3.exe
+﻿  Reads.cpp
+  Sequence.cpp
+D:\Лабы 3 сем\labs_3sem\lab3v3\Sequence.cpp(229,27): error C2440: return: невозможно преобразовать "Sequence *" в "Sequence"
+D:\Лабы 3 сем\labs_3sem\lab3v3\Sequence.cpp(229,27): message : Ни один конструктор не смог принять исходный тип, либо разрешение перегрузки конструктора неоднозначно
+D:\Лабы 3 сем\labs_3sem\lab3v3\Sequence.cpp(239,26): error C2679: бинарный "=": не найден оператор, принимающий правый операнд типа "Sequence *" (или приемлемое преобразование отсутствует)
+D:\Лабы 3 сем\labs_3sem\lab3v3\Sequence.h(37,1): message : может быть "Sequence &Sequence::operator =(const Sequence &)"
+D:\Лабы 3 сем\labs_3sem\lab3v3\Sequence.cpp(239,26): message : при попытке сопоставить список аргументов "(Sequence, Sequence *)"
+  lab3v3.cpp
+D:\Лабы 3 сем\labs_3sem\lab3v3\lab3v3.cpp(41,28): error C2679: бинарный "=": не найден оператор, принимающий правый операнд типа "Sequence *" (или приемлемое преобразование отсутствует)
+D:\Лабы 3 сем\labs_3sem\lab3v3\Sequence.h(37,1): message : может быть "Sequence &Sequence::operator =(const Sequence &)"
+D:\Лабы 3 сем\labs_3sem\lab3v3\lab3v3.cpp(41,28): message : при попытке сопоставить список аргументов "(Sequence, Sequence *)"
+  Создание кода...

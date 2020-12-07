@@ -9,15 +9,11 @@ using std::endl;
 Sequence::Sequence()
 {
 	length = 0;
-	arr = new int[1];
+	arr = nullptr;
 }
 Sequence::~Sequence()
 {
-	
-	if (arr != nullptr) {
-		
 		delete[] arr;
-	}
 }
 Sequence::Sequence(int el) {
 	length = 1;
@@ -26,6 +22,7 @@ Sequence::Sequence(int el) {
 	
 }
 Sequence::Sequence(int length, const int* arr) {
+	
 	this->length = length;
 	this->arr = new int[length];
 	if(arr!=nullptr)
@@ -46,25 +43,25 @@ void Sequence::see_seq(std::ostream& out) const
 	}
 	out << endl;
 }
-Sequence* Sequence::unite(Sequence* seq) {
-	
-	Sequence* seq_temp = new Sequence(length+seq->length, nullptr);
+Sequence* Sequence::unite(const Sequence* seq) const {
+
+	Sequence* seq_temp = new Sequence(length + seq->length, nullptr);
 	for (int i = 0; i < length; i++)
 	{
 		seq_temp->arr[i] = arr[i];
 	}
-	for (int i = length; i < length+seq->length; i++)
+	for (int i = length; i < length + seq->length; i++)
 	{
-		seq_temp->arr[i] = seq->arr[i-length];
+		seq_temp->arr[i] = seq->arr[i - length];
 	}
-	
-		//cout << *seq_temp;
-	
+
+	//cout << *seq_temp;
+
 	return seq_temp;
 
 }
 int Sequence::get_el(int index) const {
-
+	if (index >= length) throw "invalid index";
 	return(arr[index]);
 }
 int* Sequence::get_seq() const {
@@ -89,64 +86,67 @@ void Sequence::add_el(int num)
 	arr = arr_temp;
 }
 
-void Sequence::see_seq_up(int* array) const
+
+void Sequence::see_seq_up_or_down(int* array, int len, int what) const
 {
-	int arr_temp[SIZE];
+	if (len < 3) {
+		throw "invalid array's length";
+	}
+
+
+	int* arr_temp = new int[len];
 	int temp = 0;
-	for (int i = 0; i < length; i++)
+	for (int i = 0; i < len; i++)
 	{
 		arr_temp[temp] = arr[i];
 
 		temp++;
-
-		if (arr[i] > arr[i + 1]) {
-			if (temp < 3) {
-				temp = 0;
+		switch (what) {
+		case 1:
+			if (arr[i] > arr[i + 1]) {
+				if (temp < 3) {
+					temp = 0;
+				}
+				else {
+					break;
+				}
 			}
-			else {
-				break;
+			break;
+		case 2:
+			if (arr[i] < arr[i + 1]) {
+				if (temp < 3) {
+					temp = 0;
+				}
+				else {
+					break;
+				}
 			}
+			break;
+		default: throw "invalid command";
+			break;
 		}
+
 	}
 	if (temp < 3) {
-		cout << "Seq only whith " << temp << "el";
+		throw "too few";
 	}
-	else {
+
+	if (len > temp) {
 		for (int i = 0; i < temp; i++)
 		{
 			array[i] = arr_temp[i];
 		}
 	}
-}
-void Sequence::see_seq_down(int* array) const
-{
-	int arr_temp[SIZE];
-	int temp = 0;
-	for (int i = 0; i < length; i++)
-	{
-		arr_temp[temp] = arr[i];
-
-		temp++;
-
-		if (arr[i] < arr[i + 1]) {
-			if (temp < 3) {
-				temp = 0;
-			}
-			else {
-				break;
-			}
-		}
-	}
-	if (temp < 3) {
-		cout << "Seq only whith " << temp << "el";
-	}
 	else {
-		for (int i = 0; i < temp; i++)
+		for (int i = 0; i < len; i++)
 		{
 			array[i] = arr_temp[i];
 		}
 	}
+	delete[] arr_temp;
+
 }
+
 int Sequence::uniq() const {
 
 	std::set <int> st;
@@ -173,35 +173,35 @@ int Sequence::find_el_count(int num) const {
 			return(temp);
 		}
 	}
-	//cout << "Invalid input";
+	throw "Invalid input";
 	return(0);
 }
-void Sequence::input() {
+void Sequence::input(std::istream& s) {
 	cout << "Length: ";
 
 
-	std::cin >> length;
+	s >> length;
 	cout << endl;
 	while (!std::cin.good() || length > SIZE)
 	{
 		std::cout << std::endl << "Invalid input, try again" << std::endl;
-		std::cin.clear();
-		std::cin.ignore(std::cin.rdbuf()->in_avail());
-		std::cin >> length;
+		s.clear();
+		s.ignore(std::cin.rdbuf()->in_avail());
+		s >> length;
 	}
 	int* arr_temp = new int[length];
 	for (int i = 0; i < length; i++) {
-		std::cin >>arr_temp[i];
+		s >>arr_temp[i];
 		while (!std::cin.good())
 		{
-			std::cout << std::endl << "Invalid input, try again" << std::endl;
-			std::cin.clear();
-			std::cin.ignore(std::cin.rdbuf()->in_avail());
-			std::cin >> arr_temp[i];
+			cout << std::endl << "Invalid input, try again" << std::endl;
+			s.clear();
+			s.ignore(std::cin.rdbuf()->in_avail());
+			s >> arr_temp[i];
 		}
 
 	}
-	delete arr;
+	delete[] arr;
 	arr = arr_temp;
 }
 
@@ -220,7 +220,7 @@ std::ostream& operator <<(std::ostream& s, const Sequence& seq)
 }
 
 std::istream& operator >> (std::istream& s, Sequence& seq) {
-	seq.input();
+	seq.input(s);
 	return s;
 }
 
@@ -235,4 +235,9 @@ void operator +=(Sequence& seq, int i)
 	return;
 }
 
+//Sequence* operator+=(Sequence& seq1, Sequence& seq2) {
+
+	//seq1 = *seq1.unite(&seq2);
+	//return(seq1);
+//}
 

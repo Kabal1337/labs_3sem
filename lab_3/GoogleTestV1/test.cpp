@@ -101,7 +101,7 @@ TEST_F(SeqTest, unite) {
          seq1 = new Sequence(i + 1, arr);
          seq2 = new Sequence(i + 1, arr);
          
-        seq3 = &seq1->unite(*seq2);
+        seq3 = &seq1->unite(seq2);
         for (int j = 0; j < i + 1; j++) {
             temp_arr[j] = arr[j];
         }

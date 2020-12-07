@@ -8,7 +8,6 @@
 using std::cin;
 using std::cout;
 using std::endl;
-
 int main()
 {
 	//float  r;
@@ -17,8 +16,8 @@ int main()
 	Sequence seq1;
 	Sequence seq2;
 	Sequence seq3;
-	seq1.input();
-	seq2.input();
+	seq1.input(cin);
+	seq2.input(cin);
 	while (com_num != 8)
 	{
 		
@@ -36,7 +35,7 @@ int main()
 		switch (com_num)
 		{
 		case 1:
-			seq3 = seq1.unite(seq2);
+			seq3 = seq1.unite(&seq2);
 			break;
 		case 2:
 			seq3.see_seq(cout);
@@ -55,9 +54,14 @@ int main()
 			break;
 		case 6:
 			
-			int arr[SIZE];
-			seq1.see_seq_down(arr);
-			for (int i = 0; i < 3; i++)
+			int arr[100];
+			try {
+				seq1.see_seq_up_or_down(arr, 100, 1);
+			}
+			catch(const char* a){
+				cout << a;
+			}
+			for (int i = 0; i < 5; i++)
 			{
 				cout << arr[i] << ' ';
 			}

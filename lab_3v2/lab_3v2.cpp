@@ -16,7 +16,9 @@ int main()
 	Sequence seq1;
 	Sequence seq2;
 	Sequence seq3;
+	Sequence* seq4;
 	cin >> seq1;
+	
 	cin >> seq2;
 	//seq3.input();
 	while (com_num != 8)
@@ -36,7 +38,9 @@ int main()
 		switch (com_num)
 		{
 		case 1:
-			seq3 = seq1 + seq2;
+			
+			(seq3 += seq2)+=seq1;
+			
 			break;
 		case 2:
 			cout << seq3;
@@ -53,12 +57,12 @@ int main()
 			break;
 		case 5:
 			num = read_r();
-			seq3+=num;
+			
 			break;
 		case 6:
 			
-			int arr[SIZE];
-			seq1.see_seq_down(arr);
+			int arr[100];
+			seq1.see_seq_up_or_down(arr, 100, 2);
 			for (int i = 0; i < 3; i++)
 			{
 				cout << arr[i] << ' ';
@@ -67,6 +71,7 @@ int main()
 			break;
 		case 7:
 			index = read_r();
+			
 			cout<<seq1.get_el(index);
 			break;
 		
