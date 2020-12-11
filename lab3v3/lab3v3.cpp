@@ -9,12 +9,22 @@ using std::endl;
 
 int main()
 {
+	/*
+	int* arr = new int[10];
+	for (int i = 0; i < 10; i++)
+	{
+		arr[i] = i;
+	}
+	
+	Sequence seq(10, arr);
+	delete[] arr;
+	*/
 	//float  r;
 	int com_num = 0;
 	int num, index, temp;
 	Sequence seq1;
 	Sequence seq2;
-	Sequence seq3;
+	Sequence* seq3 = new Sequence;
 	Sequence seq_one(3);
 	cin >> seq1;
 	cin >> seq2;
@@ -38,14 +48,14 @@ int main()
 		switch (com_num)
 		{
 		case 1:
-			seq3 = seq1.unite(&seq2);
+			(*seq3 += seq1)+=seq2;
 			break;
 		case 2:
-			cout << seq3;
+			cout << *seq3;
 			break;
 		case 3:
 			
-			cout << seq3.uniq() << endl;
+			cout << seq3->uniq() << endl;
 			break;
 		case 4:
 
@@ -88,6 +98,7 @@ int main()
 		}
 	}
 	return 0;
+
 }
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
 // Отладка программы: F5 или меню "Отладка" > "Запустить отладку"

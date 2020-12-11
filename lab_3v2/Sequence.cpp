@@ -40,19 +40,19 @@ void Sequence::see_seq(std::ostream& out) const
 	}
 	out << endl;
 }
-Sequence Sequence::unite(const Sequence* seq) const {
-	if ((this->length + seq->length) > 100) throw "too long seqs";
+Sequence Sequence::unite(const Sequence& seq) const {
+	if ((this->length + seq.length) > 100) throw "too long seqs";
 	
 		Sequence seq_temp(length, arr);
 
 		int j = 0;
 		int i = length;
-		while (j < seq->get_length()) {
-			seq_temp.set_arr(i, seq->get_el(j));
+		while (j < seq.get_length()) {
+			seq_temp.set_arr(i, seq.get_el(j));
 			j++;
 			i++;
 		}
-		seq_temp.length += seq->get_length();
+		seq_temp.length += seq.get_length();
 		return seq_temp;
 	
 }
@@ -212,7 +212,7 @@ std::istream& operator >> (std::istream& s, Sequence& seq) {
 
 Sequence operator + (const Sequence& seq1, const Sequence& seq2) 
 {
-	return(seq1.unite(&seq2));
+	return(seq1.unite(seq2));
 }
 
 void operator+=(Sequence& seq, int i)
@@ -223,7 +223,7 @@ void operator+=(Sequence& seq, int i)
 
 Sequence& operator+=(Sequence& seq1, Sequence& seq2) {
 	
-	seq1 = seq1.unite(&seq2);
+	seq1 = seq1.unite(seq2);
 	return(seq1);
 }
 

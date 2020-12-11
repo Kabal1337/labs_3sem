@@ -35,7 +35,7 @@ Sequence::Sequence(int length, const int* arr) {
 
 void Sequence::see_seq(std::ostream& out) const
 {
-
+	
 	for (int i = 0; i < length; i++)
 	{
 		out << this->arr[i] << ' ';
@@ -43,16 +43,16 @@ void Sequence::see_seq(std::ostream& out) const
 	}
 	out << endl;
 }
-Sequence* Sequence::unite(const Sequence* seq) const {
+Sequence* Sequence::unite(const Sequence& seq) const {
 
-	Sequence* seq_temp = new Sequence(length + seq->length, nullptr);
+	Sequence* seq_temp = new Sequence(length + seq.length, nullptr);
 	for (int i = 0; i < length; i++)
 	{
 		seq_temp->arr[i] = arr[i];
 	}
-	for (int i = length; i < length + seq->length; i++)
+	for (int i = length; i < length + seq.length; i++)
 	{
-		seq_temp->arr[i] = seq->arr[i - length];
+		seq_temp->arr[i] = seq.arr[i - length];
 	}
 
 	//cout << *seq_temp;
@@ -224,9 +224,9 @@ std::istream& operator >> (std::istream& s, Sequence& seq) {
 	return s;
 }
 
-Sequence* operator + (Sequence& seq1, Sequence& seq2)
+Sequence* operator + (const Sequence& seq1, const Sequence& seq2)
 {
-	return(seq1.unite(&seq2));
+	return(seq1.unite(seq2));
 }
 
 void operator +=(Sequence& seq, int i)
@@ -235,9 +235,9 @@ void operator +=(Sequence& seq, int i)
 	return;
 }
 
-//Sequence* operator+=(Sequence& seq1, Sequence& seq2) {
+Sequence& operator+=(Sequence& seq1, const Sequence& seq2) {
 
-	//seq1 = *seq1.unite(&seq2);
-	//return(seq1);
-//}
+	seq1 = *seq1.unite(seq2);
+	return(seq1);
+}
 

@@ -15,7 +15,7 @@ public:
 	int uniq() const;//определение количества групп в последовательности (то есть, сколько разных элементов включено в последовательность);
 	
 	void see_seq(std::ostream& out) const; //увидеть последовательность
-	Sequence* unite(const Sequence* seq) const; //объединение двух последовательностей в одну(с помощью перегруженного оператора сложения + ) в результате формируется новый вектор с сохранением исходных
+	Sequence* unite(const Sequence& seq) const; //объединение двух последовательностей в одну(с помощью перегруженного оператора сложения + ) в результате формируется новый вектор с сохранением исходных
 	int get_el(int index) const;//получить элемент последовательности по его индексу
 	int get_length() const;//получить длину массива класса
 	void add_el(int num); //добавить один элемент в последовательность
@@ -27,7 +27,7 @@ public:
 	friend std::ostream& operator << (std::ostream& s, const Sequence& seq);
 	friend std::istream& operator >> (std::istream& s, Sequence& seq);
 	friend Sequence* operator + (const Sequence& seq1, const Sequence& seq2);
-	friend Sequence* operator+=(Sequence& seq1, Sequence& seq2);
+	friend Sequence& operator+=(Sequence& seq1, const Sequence& seq2);
 	friend void operator += (Sequence& seq, int i);
 	int operator () (int num);
 private:
