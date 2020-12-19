@@ -1,4 +1,5 @@
-﻿  pch.cpp
-  test.cpp
-D:\Лабы 3 сем\labs_3sem\lab3v3\GoogleTestsV3\test.cpp(94,9): warning C4101: temp_arr: неиспользованная локальная переменная
+﻿  test.cpp
+D:\Лабы 3 сем\labs_3sem\lab3v3\GoogleTestsV3\test.cpp(161,9): warning C4101: temp_arr: неиспользованная локальная переменная
+D:\Лабы 3 сем\labs_3sem\lab3v3\GoogleTestsV3\test.cpp(195,9): warning C4101: temp_arr: неиспользованная локальная переменная
+D:\Лабы 3 сем\labs_3sem\lab3v3\GoogleTestsV3\test.cpp(229,9): warning C4101: temp_arr: неиспользованная локальная переменная
   GoogleTestsV3.vcxproj -> D:\Лабы 3 сем\labs_3sem\lab3v3\GoogleTestsV3\Debug\GoogleTestsV3.exe

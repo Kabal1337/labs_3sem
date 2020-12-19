@@ -57,7 +57,7 @@ Sequence Sequence::unite(const Sequence* seq) const{
 	
 }
 int Sequence::get_el(int index) const {
-	if (index >= 100) throw "invalid index";
+	if ((index >= 100)||(index<0)) throw "invalid index";
 	
 	return(arr[index]);
 }

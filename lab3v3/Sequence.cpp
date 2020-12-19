@@ -22,7 +22,7 @@ Sequence::Sequence(int el) {
 	
 }
 Sequence::Sequence(int length, const int* arr) {
-	
+	if (length < 0) throw "invalid length";
 	this->length = length;
 	this->arr = new int[length];
 	if(arr!=nullptr)
@@ -31,7 +31,27 @@ Sequence::Sequence(int length, const int* arr) {
 		this->arr[i] = arr[i];
 	}
 }
+Sequence::Sequence(const Sequence& seq)
+{
+	this->length = seq.get_length();
+	this->arr = new int[seq.length];
+	for (int i = 0; i < length; i++)
+	{
+		arr[i] = seq.get_el(i);
+	}
+	
+}
 
+Sequence::Sequence(Sequence&& seq)
+{
+	this->length = seq.get_length();
+	this->arr = new int[seq.length];
+	for (int i = 0; i < length; i++)
+	{
+		arr[i] = seq.get_el(i);
+	}
+	seq.arr = nullptr;
+}
 
 void Sequence::see_seq(std::ostream& out) const
 {
@@ -205,6 +225,30 @@ void Sequence::input(std::istream& s) {
 	arr = arr_temp;
 }
 
+Sequence& Sequence::operator=(Sequence&& seq)
+{
+	if (&seq == this) return *this;
+	this->length = seq.get_length();
+	this->arr = new int[seq.length];
+	for (int i = 0; i < length; i++)
+	{
+		arr[i] = seq.get_el(i);
+	}
+	
+	return *this;
+}
+
+Sequence& Sequence::operator=(const Sequence& seq) //a=b 
+{
+	if (&seq == this) return *this;
+	this->length = seq.get_length();
+	this->arr = new int[seq.length];
+	for (int i = 0; i < length; i++)
+	{
+		arr[i] = seq.get_el(i);
+	}
+	return *this;
+}
 int Sequence::operator()(int num)
 {
 	return (find_el_count(num));
@@ -224,9 +268,9 @@ std::istream& operator >> (std::istream& s, Sequence& seq) {
 	return s;
 }
 
-Sequence* operator + (const Sequence& seq1, const Sequence& seq2)
+Sequence operator + (const Sequence& seq1, const Sequence& seq2)
 {
-	return(seq1.unite(seq2));
+	return(*seq1.unite(seq2));
 }
 
 void operator +=(Sequence& seq, int i)

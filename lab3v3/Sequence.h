@@ -10,7 +10,8 @@ public:
 	Sequence(int length, const int* arr); //создание экземпл€ров класса с инициализацией размером и значени€ми элементов после-довательности;
 	Sequence(int el); //cоздание экземпл€ров класса с инициализацией единственным элементом последователь-ности;
 	~Sequence();
-
+	Sequence(const Sequence& seq);
+	Sequence(Sequence&& seq);
 	int find_el_count(int num) const; //определение частоты по€влени€ некоторого элемента в последовательности
 	int uniq() const;//определение количества групп в последовательности (то есть, сколько разных элементов включено в последовательность);
 	
@@ -26,9 +27,11 @@ public:
 	void input(std::istream& s);
 	friend std::ostream& operator << (std::ostream& s, const Sequence& seq);
 	friend std::istream& operator >> (std::istream& s, Sequence& seq);
-	friend Sequence* operator + (const Sequence& seq1, const Sequence& seq2);
+	friend Sequence operator + (const Sequence& seq1, const Sequence& seq2);
 	friend Sequence& operator+=(Sequence& seq1, const Sequence& seq2);
 	friend void operator += (Sequence& seq, int i);
+	Sequence& operator=(Sequence&& seq2);
+	Sequence& operator=(const Sequence& seq);
 	int operator () (int num);
 private:
 	int length;

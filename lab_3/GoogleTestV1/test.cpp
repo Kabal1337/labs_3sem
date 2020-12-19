@@ -46,7 +46,23 @@ TEST_F(SeqTest, custom_constr) {
     }
 }
 
+TEST_F(SeqTest, custom_constr_throw) {
+    int arr[NUM_OF_TESTS];
+    for (int j = -NUM_OF_TESTS; j < 0; j++)
+    {
 
+
+        for (int i = 0; i < NUM_OF_TESTS; i++)
+        {
+            arr[i] = i;
+            EXPECT_THROW(Sequence seq(j, arr), char*);
+            
+           
+
+
+        }
+    }
+}
 
 TEST_F(SeqTest, add_el) {
     for (int i = 0; i < NUM_OF_TESTS; i++)
@@ -65,6 +81,20 @@ TEST_F(SeqTest, get_el) {
     }
     
 }
+
+TEST_F(SeqTest, get_el_throw) {
+    for (int i = 0; i < NUM_OF_TESTS; i++)
+    {
+        seq->add_el(i);
+        for (int j = -NUM_OF_TESTS; j < 0; j++)
+        {
+            EXPECT_THROW(seq->get_el(j), char*);
+        }
+       
+    }
+
+}
+
 TEST_F(SeqTest, uniq) {
     int arr[NUM_OF_TESTS];
     Sequence* seq1;
@@ -119,3 +149,30 @@ TEST_F(SeqTest, unite) {
     }
 
 }
+TEST_F(SeqTest, unite_throw) {
+    int arr[NUM_OF_TESTS];
+    int temp_arr[NUM_OF_TESTS];
+    Sequence* seq1;
+        
+    Sequence* seq2;
+        
+    Sequence* seq3;
+    for (int i = NUM_OF_TESTS/2+1; i < NUM_OF_TESTS; i++)
+    {
+        int temp_arr[NUM_OF_TESTS];
+        
+        arr[i] = i;
+         seq1 = new Sequence(i + 1, arr);
+         seq2 = new Sequence(i + 1, arr);
+         
+        EXPECT_THROW(&seq1->unite(seq2), char*);
+        
+       
+        delete seq1;
+        delete seq2;
+        
+        
+    }
+
+}
+

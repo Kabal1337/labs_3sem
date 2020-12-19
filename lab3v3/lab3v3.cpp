@@ -24,9 +24,15 @@ int main()
 	int num, index, temp;
 	Sequence seq1;
 	Sequence seq2;
-	Sequence* seq3 = new Sequence;
+	Sequence seq3;
 	Sequence seq_one(3);
 	cin >> seq1;
+	Sequence seq_new(seq1);
+	cout << seq_new;
+	cout << seq1;
+	//seq_new.~Sequence();
+	//cout << seq1;
+
 	cin >> seq2;
 	cout << seq_one.get_el(0);
 	//seq3.input();
@@ -48,14 +54,16 @@ int main()
 		switch (com_num)
 		{
 		case 1:
-			(*seq3 += seq1)+=seq2;
+			(seq3+=seq1)+=seq2;
+			cout << seq1;
+			cout << seq2;
 			break;
 		case 2:
-			cout << *seq3;
+			cout << seq3;
 			break;
 		case 3:
 			
-			cout << seq3->uniq() << endl;
+			cout << seq3.uniq() << endl;
 			break;
 		case 4:
 
@@ -98,7 +106,7 @@ int main()
 		}
 	}
 	return 0;
-
+	
 }
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
 // Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
