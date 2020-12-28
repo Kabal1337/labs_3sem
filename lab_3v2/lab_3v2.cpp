@@ -39,7 +39,7 @@ int main()
 		{
 		case 1:
 			
-			(seq3 += seq2)+=seq1;
+			((seq3 += seq2) += seq1)+=9;
 			
 			break;
 		case 2:
@@ -62,7 +62,7 @@ int main()
 		case 6:
 			
 			int arr[100];
-			seq1.see_seq_up_or_down(arr, 100, 2);
+			seq1.see_seq_up_or_down(arr, 100, down);
 			for (int i = 0; i < 3; i++)
 			{
 				cout << arr[i] << ' ';

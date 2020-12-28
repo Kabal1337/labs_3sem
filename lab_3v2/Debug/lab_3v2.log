@@ -1,5 +1,3 @@
-﻿  lab_3v2.cpp
-D:\Лабы 3 сем\labs_3sem\lab_3v2\lab_3v2.cpp(19,12): warning C4101: seq4: неиспользованная локальная переменная
-  Sequence.cpp
-  Создание кода...
+﻿  Sequence.cpp
+D:\Лабы 3 сем\labs_3sem\lab_3v2\Sequence.cpp(232): warning C4715: operator>>: значение возвращается не при всех путях выполнения
   lab_3v2.vcxproj -> D:\Лабы 3 сем\labs_3sem\lab_3v2\Debug\lab_3v2.exe

@@ -1,2 +1,5 @@
-﻿  lab3v3.cpp
+﻿  Sequence.cpp
+  lab3v3.cpp
+  Создание кода...
+D:\Лабы 3 сем\labs_3sem\lab3v3\Sequence.cpp(286): warning C4715: operator>>: значение возвращается не при всех путях выполнения
   lab3v3.vcxproj -> D:\Лабы 3 сем\labs_3sem\lab3v3\Debug\lab3v3.exe

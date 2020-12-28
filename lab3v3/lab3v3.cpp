@@ -54,7 +54,8 @@ int main()
 		switch (com_num)
 		{
 		case 1:
-			(seq3+=seq1)+=seq2;
+			
+			seq3 = seq1 + seq2+seq1;
 			cout << seq1;
 			cout << seq2;
 			break;
@@ -73,13 +74,14 @@ int main()
 			break;
 		case 5:
 			num = read_r();
-			seq3+=num;
+			(seq3+=num)+=9;
 			break;
 		case 6:
 
 			arr = new int[10];
 			try {
-				seq1.see_seq_up_or_down(arr, 10, 1);
+				
+				seq1.see_seq_up_or_down(arr, 10, down);
 			}
 			catch (const char* a) {
 				cout << a;

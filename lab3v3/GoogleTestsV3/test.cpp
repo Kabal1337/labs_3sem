@@ -163,7 +163,7 @@ TEST_F(SeqTest, unite) {
 
     Sequence* seq2;
 
-    Sequence* seq3;
+    Sequence seq3;
     for (int i = 0; i < NUM_OF_TESTS / 2; i++)
     {
         int temp_arr[NUM_OF_TESTS];
@@ -180,7 +180,7 @@ TEST_F(SeqTest, unite) {
             temp_arr[i + j + 1] = arr[j];
         }
         for (int j = 0; j < 2 * i; j++) {
-            EXPECT_EQ(seq3->get_el(j), temp_arr[j]);
+            EXPECT_EQ(seq3.get_el(j), temp_arr[j]);
         }
 
         delete seq1;
