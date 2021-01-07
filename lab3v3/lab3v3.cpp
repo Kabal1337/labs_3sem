@@ -74,7 +74,7 @@ int main()
 			break;
 		case 5:
 			num = read_r();
-			(seq3+=num)+=9;
+			seq3+=seq1+=9;
 			break;
 		case 6:
 

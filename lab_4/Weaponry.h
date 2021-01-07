@@ -10,9 +10,16 @@ enum Pos {
 };
 struct Weaponry
 {
+	Weaponry() {
+		name = "null";
+		caliber = 0;
+		range = 0;
+		position = Stern;
+		ammo = 0;
+	}
 	std::string name;
-	double caliber;
-	int range;
+	unsigned caliber;
+	unsigned range;
 	Pos position; //1 - корма, 2 - нос, 3-левый борт, 4-правый борт
-	int ammo;
+	unsigned ammo;
 };

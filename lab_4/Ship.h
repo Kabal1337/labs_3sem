@@ -12,45 +12,50 @@ class Ship
 {
 public:
 	Ship();
-	Ship(std::string name, Captain& cap, int w_dis, int max_s, int team);
-	
-	virtual Ship_type get_type() = 0;	
-	std::string get_name() {
+	Ship(std::string name, const Captain& cap, unsigned w_dis, unsigned max_s, unsigned team);
+	Ship(const Ship& ship);
+	//virtual ~Ship() {}
+	virtual Ship_type get_type() const = 0;	
+	std::string get_name() const {
 		return(name);
 	}
-	Captain& get_cap() {
-		return(cap);
+	Captain get_cap() const {
+		return(this->cap);
 	}
-	int get_w_disp() {
+	unsigned get_w_disp() const {
 		return(w_displacement_m3);
 	}
-	int get_max_speed() {
+	unsigned get_max_speed() const {
 		return(max_speed);
 	}
-	int get_team() {
+	unsigned get_team() const {
 		return(team);
 	}
 	void set_name(std::string name) {
 		this->name = name;
 	}
-	void set_cap(Captain& cap) {
-		this->cap=cap;
+	void set_cap(const Captain& cap) {
+		this->cap.experience = cap.experience;
+		this->cap.name = cap.name;
+		this->cap.old = cap.old;
+		this->cap.patronymic = cap.patronymic;
+		this->cap.surname = cap.surname;
 	}
-	void set_w_disp(int w_displacement_m3) {
+	void set_w_disp(unsigned w_displacement_m3) {
 		this->w_displacement_m3 = w_displacement_m3;
 	}
-	void set_max_speed(int max_speed) {
+	void set_max_speed(unsigned max_speed) {
 		this->max_speed = max_speed;
 	}
-	void set_team(int team) {
+	void set_team(unsigned team) {
 		this->team=team;
 	}
 
-protected:
+private:
 	std::string name;
 	Captain cap;
-	int w_displacement_m3;
-	int max_speed;
-	int team;
+	unsigned w_displacement_m3;
+	unsigned max_speed;
+	unsigned team;
 	
 };

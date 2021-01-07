@@ -150,6 +150,7 @@
   <ItemGroup>
     <ClInclude Include="Captain.h" />
     <ClInclude Include="Cargo.h" />
+    <ClInclude Include="My_vector.h" />
     <ClInclude Include="ship_info.h" />
     <ClInclude Include="Сonvoy.h" />
     <ClInclude Include="Military.h" />

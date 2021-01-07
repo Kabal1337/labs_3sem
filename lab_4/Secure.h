@@ -8,12 +8,21 @@ class Secure: virtual public Ship
 {
 public:
 	
-	Secure(std::vector<Weaponry> wep, std::string name, Captain& cap, int w_dis, int max_s, int team);
-	Ship_type get_type() override
+	Secure(const std::vector<Weaponry>& wep, std::string name, const Captain& cap, unsigned w_dis, unsigned max_s, unsigned team);
+	Secure(const Secure& sec);
+	Ship_type get_type() const override
 	{
 		return(Sec);
 	}
-	std::vector<Weaponry> get_wep() {
+	void shoot(int index) {
+		if (index >= wep.size()) throw "invalid index";
+		if (wep[index].ammo == 0) throw "ammo is empty";
+		wep[index].ammo--;
+	}
+	void set_wep(const std::vector<Weaponry>& wep) {
+		this->wep = wep;
+	}
+	std::vector<Weaponry> get_wep() const {
 		return(wep);
 	}
 	

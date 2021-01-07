@@ -3,10 +3,16 @@
 class ship_info
 {
 public:
+	ship_info();
 	ship_info(Ship* ship, int distance, std::string Callsign);
+	
 	~ship_info();
 	Ship* get_ship() {
 		return(ship);
+	}
+
+	void set_ship(Ship* ship) {
+		this->ship = ship;
 	}
 	std::string get_callsign() {
 		return(Callsign);

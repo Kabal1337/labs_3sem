@@ -7,23 +7,27 @@ public:
 	Cargo();
 	
 	
-	Cargo(int cargo_w, std::string name, Captain& cap, int w_dis, int max_s, int team);
-	Ship_type get_type() override
+	Cargo(unsigned cargo_w, std::string name, const Captain& cap, unsigned w_dis, unsigned max_s, unsigned team);
+	Cargo(const Cargo& car);
+	Ship_type get_type() const override
 	{
 		return(Car);
 	}
-	int get_cargo_w() {
+	unsigned get_cargo_w() const{
 		return(cargo_w);
 	}
-	void set_cargo_w(int cargo_w) {
+	void set_cargo_w(unsigned cargo_w) {
 		this->cargo_w = cargo_w;
 	}
-	double get_speed() {
+	void set_speed() {
+		speed=(get_max_speed() / get_cargo_w()) * 10;
+	}
+	unsigned get_speed() const {
 		return(speed);
 	}
 	
 private:
-	int cargo_w;
-	double speed;
+	unsigned cargo_w;
+	unsigned speed;
 };
 
