@@ -1,13 +1,30 @@
-﻿  Convoy.cpp
-D:\Лабы 3 сем\labs_3sem\lab_4\Captain.h(2,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
-D:\Лабы 3 сем\labs_3sem\lab_4\Secure.h(18,13): warning C4018: >=: несоответствие типов со знаком и без знака
-D:\Лабы 3 сем\labs_3sem\lab_4\Convoy.cpp(231,13): warning C4018: >=: несоответствие типов со знаком и без знака
-D:\Лабы 3 сем\labs_3sem\lab_4\Convoy.cpp(231,41): warning C4018: >=: несоответствие типов со знаком и без знака
+﻿  Cargo.cpp
+D:\Labs_3_sem\labs_3sem\lab_4\Captain.h(2,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+  Convoy.cpp
+D:\Labs_3_sem\labs_3sem\lab_4\Captain.h(2,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+D:\Labs_3_sem\labs_3sem\lab_4\Secure.h(19,13): warning C4018: >=: несоответствие типов со знаком и без знака
+D:\Labs_3_sem\labs_3sem\lab_4\Convoy.cpp(8,8): warning C4018: >=: несоответствие типов со знаком и без знака
+D:\Labs_3_sem\labs_3sem\lab_4\Convoy.cpp(22,8): warning C4018: >=: несоответствие типов со знаком и без знака
+D:\Labs_3_sem\labs_3sem\lab_4\Convoy.cpp(97,23): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Labs_3_sem\labs_3sem\lab_4\Convoy.cpp(119,22): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Labs_3_sem\labs_3sem\lab_4\Convoy.cpp(173,20): warning C4018: <=: несоответствие типов со знаком и без знака
+D:\Labs_3_sem\labs_3sem\lab_4\Convoy.cpp(272,13): warning C4018: >=: несоответствие типов со знаком и без знака
+D:\Labs_3_sem\labs_3sem\lab_4\Convoy.cpp(272,41): warning C4018: >=: несоответствие типов со знаком и без знака
+  Military.cpp
+D:\Labs_3_sem\labs_3sem\lab_4\Captain.h(2,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+D:\Labs_3_sem\labs_3sem\lab_4\Secure.h(19,13): warning C4018: >=: несоответствие типов со знаком и без знака
+  Secure.cpp
+D:\Labs_3_sem\labs_3sem\lab_4\Captain.h(2,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+D:\Labs_3_sem\labs_3sem\lab_4\Secure.h(19,13): warning C4018: >=: несоответствие типов со знаком и без знака
   lab_4.cpp
-D:\Лабы 3 сем\labs_3sem\lab_4\Captain.h(2,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
-D:\Лабы 3 сем\labs_3sem\lab_4\lab_4.cpp(6,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
-D:\Лабы 3 сем\labs_3sem\lab_4\Secure.h(18,13): warning C4018: >=: несоответствие типов со знаком и без знака
+D:\Labs_3_sem\labs_3sem\lab_4\Captain.h(2,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+D:\Labs_3_sem\labs_3sem\lab_4\lab_4.cpp(6,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+D:\Labs_3_sem\labs_3sem\lab_4\Secure.h(19,13): warning C4018: >=: несоответствие типов со знаком и без знака
+D:\Labs_3_sem\labs_3sem\lab_4\lab_4.cpp(79,8): warning C4101: t: неиспользованная локальная переменная
+  ship_info.cpp
+D:\Labs_3_sem\labs_3sem\lab_4\Captain.h(2,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+D:\Labs_3_sem\labs_3sem\lab_4\Secure.h(19,13): warning C4018: >=: несоответствие типов со знаком и без знака
   Создание кода...
-D:\Лабы 3 сем\labs_3sem\lab_4\Convoy.cpp(74): warning C4715: Convoy::get_ship_info: значение возвращается не при всех путях выполнения
-D:\Лабы 3 сем\labs_3sem\lab_4\Convoy.cpp(220): warning C4715: Convoy::get_weight: значение возвращается не при всех путях выполнения
-  lab_4.vcxproj -> D:\Лабы 3 сем\labs_3sem\lab_4\Debug\lab_4.exe
+D:\Labs_3_sem\labs_3sem\lab_4\Convoy.cpp(74): warning C4715: Convoy::get_ship_info: значение возвращается не при всех путях выполнения
+D:\Labs_3_sem\labs_3sem\lab_4\Convoy.cpp(261): warning C4715: Convoy::get_weight: значение возвращается не при всех путях выполнения
+  lab_4.vcxproj -> D:\Labs_3_sem\labs_3sem\lab_4\Debug\lab_4.exe

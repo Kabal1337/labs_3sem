@@ -10,7 +10,7 @@ ship_info::ship_info()
 	this->Callsign = "null";
 }
 
-ship_info::ship_info(Ship* ship, int distance, std::string Callsign)
+ship_info::ship_info(Ship* ship, unsigned distance, std::string Callsign) 
 {
 	//Cargo* temp_car;
 	//Secure* temp_sec;

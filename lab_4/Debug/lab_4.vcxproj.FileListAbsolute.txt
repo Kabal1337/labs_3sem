@@ -1,2 +1,4 @@
 D:\Лабы 3 сем\labs_3sem\lab_4\Debug\lab_4.exe
 D:\Лабы 3 сем\labs_3sem\lab_4\Debug\lab_4.pdb
+D:\Labs_3_sem\labs_3sem\lab_4\Debug\lab_4.exe
+D:\Labs_3_sem\labs_3sem\lab_4\Debug\lab_4.pdb

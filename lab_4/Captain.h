@@ -10,7 +10,7 @@ struct Captain
 		patronymic = "null";
 		experience = 0;
 	}
-	int old;
+	int old; 
 	std::string name;
 	std::string surname;
 	std::string patronymic;

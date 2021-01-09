@@ -1,8 +1,8 @@
-#include "Ñonvoy.h"
+#include "Convoy.h"
 #include <string>
 #include "Military.h"
 #include <iostream>
-std::string Convoy::get_ship_name(int el) {
+std::string Convoy::get_ship_name(unsigned el) {
 	
 	
 	if (el>=con.size()) throw "Invalid index";
@@ -17,12 +17,12 @@ void Convoy::add_ship(ship_info& el) {
 	//std::cout<<el.get_ship()->get_name();
 	con.push_back(el);
 }
-void Convoy::del_ship(int el) {
+void Convoy::del_ship(unsigned el) {
 	
 	if (el>=con.size()) throw "out of range";
 	con.erase(el);
 }
-int Convoy::get_num_of_type_ships(Ship_type ty)
+int Convoy::get_num_of_type_ships(Ship_type ty) 
 {	
 	if (ty == Car) {
 		int temp = 0;
@@ -63,7 +63,7 @@ int Convoy::get_num_of_type_ships(Ship_type ty)
 	return 0;
 }
 
-ship_info& Convoy::get_ship_info(std::string Callsign)
+ship_info& Convoy::get_ship_info(std::string Callsign) 
 {
 	
 	for(int i = 0; i<con.size(); i++) {
@@ -73,19 +73,60 @@ ship_info& Convoy::get_ship_info(std::string Callsign)
 	}
 }
 
-int Convoy::get_num_ship()
+int Convoy::get_num_ship() 
 {
 	return(con.size());
 }
 
-void Convoy::get_table_out()
+void Convoy::get_table_out() 
 {
 	int temp = 0;
 	for (int i = 0; i < con.size(); i++)
 	{
 		
-		std::cout <<temp<<": "<< con[i].get_callsign()<<std::endl;
-		temp++;
+		std::cout << i << ": " << "Callsign: " << con[i].get_callsign() << std::endl
+			<< "distance: " << con[i].get_dist() << std::endl << "name: "
+			<< con[i].get_ship()->get_name() << std::endl << "water displacement: "
+			<< con[i].get_ship()->get_w_disp() << std::endl << "max_speed: "
+			<< con[i].get_ship()->get_max_speed() << std::endl << "team: "
+			<< con[i].get_ship()->get_team() << std::endl;
+		
+		if (con[i].get_ship()->get_type() == Sec) {
+			Secure* sec = dynamic_cast<Secure*>(con[i].get_ship());
+			std::cout << "Type: Secure" << std::endl << "Weaponary: "<<std::endl;
+			for (int j = 0; j  < sec->get_wep().size(); j ++)
+			{	
+				
+				std::cout << j << ":" << std::endl
+					<< "Ammo: " << sec->get_wep()[j].ammo << std::endl
+					<< "Caliber: " << sec->get_wep()[j].caliber<<std::endl
+					<< "Name: " << sec->get_wep()[j].name << std::endl
+					<< "Range: " << sec->get_wep()[j].range << std::endl;
+			}
+		}
+
+		if (con[i].get_ship()->get_type() == Car) {
+			Cargo* sec = dynamic_cast<Cargo*>(con[i].get_ship());
+			std::cout << "Type: Cargo" << std::endl << "Cargo_weight: " 
+				<< sec->get_cargo_w() << std::endl<<"Speed: " << sec->get_speed() << std::endl;
+			
+		}
+		if (con[i].get_ship()->get_type() == Mil) {
+			Military* sec = dynamic_cast<Military*>(con[i].get_ship());
+			std::cout << "Type: Military" << std::endl << "Cargo_weight: "
+				<< sec->get_cargo_w() << std::endl << "Speed: " <<sec->get_speed()<<std::endl;
+			
+			for (int j = 0; j < sec->get_wep().size(); j++)
+			{
+
+				std::cout << j << ":" << std::endl
+					<< "Ammo: " << sec->get_wep()[j].ammo << std::endl
+					<< "Caliber: " << sec->get_wep()[j].caliber << std::endl
+					<< "Name: " << sec->get_wep()[j].name << std::endl
+					<< "Range: " << sec->get_wep()[j].range << std::endl;
+			}
+		}
+		
 	} 
 	
 }
@@ -127,7 +168,7 @@ int Convoy::get_con_speed()
 	return temp;
 }
 
-void Convoy::add_cargo(int weight)
+void Convoy::add_cargo(unsigned weight)
 {	
 	for (int i = 1; i <= weight; i++)
 	{
@@ -206,7 +247,7 @@ int Convoy::find_min_weight()
 	return index;
 }
 
-int Convoy::get_weight(int index)
+int Convoy::get_weight(unsigned index)
 {
 	if (con[index].get_ship()->get_type() == Car) {
 		Cargo* temp = dynamic_cast<Cargo*>(con[index].get_ship());
@@ -261,4 +302,24 @@ void Convoy::modern(unsigned index_car, unsigned index_wep)
 		delete car;
 		con[index_car].set_ship(mil_new);
 	}
+}
+
+void Convoy::set_cap(Captain& cap)
+{
+	this->con_cap = cap;
+}
+
+void Convoy::set_start(int start)
+{
+	this->Start = start;
+}
+
+void Convoy::set_fin(int fin)
+{
+	this->Fin = fin;
+}
+
+void Convoy::set_dist(unsigned dist)
+{
+	this->distance = dist;
 }

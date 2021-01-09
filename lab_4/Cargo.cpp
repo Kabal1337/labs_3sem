@@ -11,7 +11,9 @@ Cargo::Cargo()
 Cargo::Cargo(unsigned cargo_w, std::string name, const Captain& cap, unsigned w_dis, unsigned max_s, unsigned team)
 	:Ship(name, cap, w_dis, max_s, team) {
 	this->cargo_w = cargo_w;
-	this->speed = (max_s / cargo_w) * 10;
+	if (cargo_w != 0)
+		this->speed = (max_s / cargo_w) * 10;
+	else this->speed = max_s;
 }
 
 Cargo::Cargo(const Cargo& car)

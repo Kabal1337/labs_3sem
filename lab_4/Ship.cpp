@@ -14,9 +14,12 @@ Ship::Ship() {
 }
 Ship::Ship(std::string name, const Captain& cap, unsigned w_dis, unsigned max_s, unsigned team)
 {
+	this->team = team;
 	this->name = name;
 	this->max_speed = max_s;
 	this->cap = cap;
+	this->w_displacement_m3 = w_dis;
+
 	
 }
 

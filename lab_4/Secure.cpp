@@ -25,13 +25,14 @@ Secure::Secure(const Secure& sec)
 Secure::Secure()
 {
 	Captain cap;
-	cap.experience = 0;
+	/*cap.experience = 0;
 	cap.name = "null";
 	cap.old = 0;
 	cap.patronymic = "null";
-	cap.surname = "null";
+	cap.surname = "null";*/
 	this->set_name("null");
 	this->set_max_speed(0);
 	this->set_cap(cap);
-	
+	this->set_team(0);
+	this->set_w_disp(0);
 }

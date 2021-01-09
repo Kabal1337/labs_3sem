@@ -41,9 +41,6 @@
     <ClInclude Include="Weaponry.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Сonvoy.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="Ship.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
@@ -63,6 +60,9 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="My_vector.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Convoy.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
